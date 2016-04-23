@@ -6,4 +6,6 @@ angular.module('chitchat', ['ui.router'])
 				templateUrl: 'views/chatBoxView.html', 
 				controller: 'ChatBoxController'
 			})
+
+			$urlRouterProvider.otherwise('/')
 	}])

@@ -1,0 +1,30 @@
+{
+  "name": "chitchat",
+  "version": "1.0.0",
+  "description": "a real-time chat box built with angularjs, socket.io, and Node/Express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctodmia/chitchat.git"
+  },
+  "keywords": [
+    "angularjs",
+    "socketio",
+    "node",
+    "express"
+  ],
+  "author": "Carine Todmia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ctodmia/chitchat/issues"
+  },
+  "homepage": "https://github.com/ctodmia/chitchat#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4"
+  }
+}
