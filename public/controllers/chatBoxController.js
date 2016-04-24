@@ -6,8 +6,11 @@ angular.module('chitchat')
 			Socket.emit('newMessage', {
 				message: msg
 			});
-			$scope.messages.push(msg);
+			// $scope.messages.push(msg);
 			$scope.newMessage = '';
 		}
+		Socket.on('newMessage', function(msg) {
+			$scope.messages.push(msg.message);
+		})
 
 	}])
