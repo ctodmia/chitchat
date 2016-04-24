@@ -11,6 +11,10 @@ app.use(express.static(__dirname + '/public'));
 
 io.on('connection', function(server) {
 	console.log('socket it to me')
+	server.on('newMessage', function(msg) {
+		io.emit('newMessage', msg)
+		console.log(msg);
+	})
 })
 
 http.listen(port, function() {
