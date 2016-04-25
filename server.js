@@ -27,7 +27,8 @@ io.on('connection', function(server) {
 	})
 	console.log('hey you')
 	server.on('newMessage', function(msg) {
-		io.emit('newMessage', msg)
+		messages.push({name: 'Guest1', message: msg.message})
+		io.emit('newMessage', {name: 'Guest1', message: msg.message})
 	})
 	server.on('disconnect', function() {
 		console.log('outta here')

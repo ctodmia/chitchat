@@ -14,7 +14,7 @@ angular.module('chitchat')
 			$scope.newMessage = '';
 		}
 		Socket.on('newMessage', function(msg) {
-			$scope.messages.push(msg.message);
+			$scope.messages.push(msg);
 		})
 
 	}])
