@@ -9,10 +9,28 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 
+var messages = [
+	{
+		name: 'Guest 1',
+		message: 'Wow carine its great that your here'
+	},
+	{
+		name: 'Guest 2',
+		message: 'Its super nice to be in this chat'
+	}
+]
 io.on('connection', function(server) {
-	console.log('socket it to me')
+	//on connection i want my app to have an initial emit that 
+	server.emit('init', {
+		name: 'Guest 1',
+		messages: messages
+	})
+	console.log('hey you')
 	server.on('newMessage', function(msg) {
 		io.emit('newMessage', msg)
+	})
+	server.on('disconnect', function() {
+		console.log('outta here')
 	})
 })
 

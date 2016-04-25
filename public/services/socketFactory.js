@@ -1,7 +1,8 @@
 angular.module('chitchat')
 
 	.factory('Socket', ['$rootScope', function($rootScope) {
-		var socket = io.connect('https://letschatter.herokuapp.com');
+		// var socket = io.connect('https://letschatter.herokuapp.com');
+		var socket = io.connect();
 		return {
 			on: function (eventName, callback) {
 				socket.on(eventName, function() {
